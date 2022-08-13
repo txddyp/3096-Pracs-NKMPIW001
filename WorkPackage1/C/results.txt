@@ -1,0 +1,11 @@
+
+Results obtained from multithreading using 2 threads...
+run 1 with time = 13.82 ms
+run 2 with time = 13.764 ms
+run 3 with time = 13.891 ms
+
+Results obtained from multithreading using 16 threads...
+run 1 with time = 18.749 ms
+run 2 with time = 18.686 ms
+run 3 with time = 18.598 ms
+

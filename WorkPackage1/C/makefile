@@ -1,6 +1,6 @@
 .RECIPEPREFIX +=
 CC = arm-linux-gnueabihf-g++
-CFLAGS = -lm -lrt
+CFLAGS = -mfp16-format=ieee #-lm -lrt
 INCLUDE = -ITools
 
 PROG = bin/*
@@ -24,7 +24,7 @@ run:
 
 run_threaded:
     bin/CHeterodyning_threaded
-    
 
-clean: 
-    rm -rf $(PROG) $(OBJS) 
+
+clean:
+    rm -rf $(PROG) $(OBJS)
