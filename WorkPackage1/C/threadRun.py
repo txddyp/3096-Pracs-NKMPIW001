@@ -3,9 +3,7 @@ from os import system as sy
 from subprocess import Popen as op
 import tempfile as tf
 
-ledger = []
-
-def reader():
+def reader():           #Reading the multiline console output and then choosing the runtime
   with tf.TemporaryFile() as tempf:
     proc = op(['make','run_threaded'],stdout=tempf)
     proc.wait()
@@ -15,27 +13,7 @@ def reader():
     tp = a[4]
   return tp[32::]
 
-
-f = open('src/CHeterodyning_threaded.h','r')
-filedata = f.readlines()
-f.close()
-
-t = input('Enter the number of threads: ')
-thread = '#define Thread_Count '+t
-filedata[14] = thread + '\n'
-newdata = ""
-
-for i in filedata:
-  newdata += i
-
-f = open('src/CHeterodyning_threaded.h','w')
-f.write(newdata)
-f.close()
-
-sy('make threaded')
-sy('clear')
-
-top = f"Results obtained from multithreading using {t} threads..."
+top = f"Results obtained from multithreading..."    #this section appends data to a text file
 tp = ""
 for i in range(3):
   rp = reader()
@@ -45,3 +23,5 @@ top+= '\n'
 
 with open("results.txt","a") as text_file:
   text_file.write(top + "\n")
+
+  sy('clean')
