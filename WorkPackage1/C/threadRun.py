@@ -1,4 +1,4 @@
-#Thread changer for Cheterodyning by txddyp
+#Thread runner for Cheterodyning by txddyp
 from os import system as sy
 from subprocess import Popen as op
 import tempfile as tf
